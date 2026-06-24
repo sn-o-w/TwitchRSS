@@ -1,4 +1,4 @@
-runtime: python311
+runtime: python313
 
 entrypoint: gunicorn -b :$PORT -k gthread --threads 3 twitchrss:app
 

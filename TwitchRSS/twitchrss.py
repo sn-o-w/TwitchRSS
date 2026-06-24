@@ -25,13 +25,14 @@ import time
 import json
 import logging
 import re
-import urllib
+import urllib.request
+import urllib.parse
 
 
 VOD_URL_TEMPLATE = 'https://api.twitch.tv/helix/videos?user_id=%s&type=%s'
 USERID_URL_TEMPLATE = 'https://api.twitch.tv/helix/users?login=%s'
 AUTH_URL = 'https://id.twitch.tv/oauth2/token'
-VODCACHE_LIFETIME = 10 * 60
+VODCACHE_LIFETIME = 1 * 60
 USERIDCACHE_LIFETIME = 24 * 60 * 60
 CHANNEL_FILTER = re.compile("^[a-zA-Z0-9_]{2,25}$")
 TWITCH_CLIENT_ID = environ.get("TWITCH_CLIENT_ID")
